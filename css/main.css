@@ -1,0 +1,15 @@
+/* definição de variaveis no css */
+:root{
+    --primaria:#3e4095;
+    --secundario: #00afee;
+    --texto: #4b4b4b;
+    --label-categoria: #d9c505;
+    /* nomes genericos de variaveis, as cores nao estao associadas a eles, entao pode-se ter qualquer cor, que fara sentido */
+    --laranja: #f58634;
+    /* nome esta diretamente associado a variavel */
+   
+}
+
+body{
+    background-color: var(--primaria);
+}
