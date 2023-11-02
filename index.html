@@ -14,34 +14,46 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- adicionando dependencias no projeto, atraves desse link estamos tendo acesso a mais de 2000 icones do site que foi linkado (no caso: font awesome, atraves de um site que facilita ter acesso a essas dependencias: cdnjs, e la é escolhido o site e as especificações doq queremos, pegar, todos os arquivos, so o que sera usado, etc. (nesse caso, tudo)) -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Montserrat:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet">
+        <!-- adicionando fonte, do google fonts -->
+
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header id="cabecalho" class="container">
-        <div> <img src="img/logo.png" alt="BookMeNow">
+        <div id="logotipo"> 
+            <img src="img/logo.png" alt="BookMeNow" height="40"> 
+            <!-- height define a altura -->
         </div>
 
-        <nav>
-            <ul>
-                <li><a href="javascript:;"></a>Categorias</li>
-                <!-- ha necessidade da criaçao de um link pois é um botao -->
-                <li><a href="sobre-nos.html"></a>Sobre Nós</li>
-                <li><a href="contato.html"></a>Contatos</li>
-            </ul>
-        </nav>
         <!-- tag nav, serve para determinar quando havera um menu na pagina -->
-
+        <nav id="menu">
+            <ul>
+              <li><a href="javascript:;">Categorias</a></li>
+              <!-- Adicione a tag <a> e o texto "Categorias" dentro dela -->
+              <li><a href="sobre-nos.html">Sobre Nós</a></li>
+              <!-- Adicione a tag <a> e o texto "Sobre Nós" dentro dela, com o caminho correto para a página "sobre-nos.html" -->
+              <li><a href="contato.html">Contatos</a></li>
+              <!-- Adicione a tag <a> e o texto "Contatos" dentro dela, com o caminho correto para a página "contato.html" -->
+            </ul>
+          </nav>          
+        
         <div id="botao-topo">
             <ul>
-                <a href="login.html">Login</a>
-                <a href="registrar.html">Registrar</a>
+                <!-- classe btn criada para criar uma formatação padrao de botões (formato retangular, fonte, borda arredondada etc.) -->
+                <a href="login.html" class="btn-secundario">Login</a>
+                <a href="registrar.html" class="btn-secundario">Registrar</a>
             </ul>
         </div>
     </header>
     <div id="banner">
 
-        <div id="container">
+        <div class="container">
             <!-- objetivo do container e centralizar e determinar a largura do item -->
             <h2>Conectando Você aos Melhores Profissionais</h2>
             <p>Descubra a Qualidade e Confiabilidade em nossos parceiros</p>
@@ -114,7 +126,7 @@
             </div>
 
             <div class="lista-card-servicos">
-                
+
                 <!-- Inicio Card Serviços -->
                 <div class="card-servicos">
                     <!-- criação da caixa pai da SEÇÂO das imagens e elementos de serviços -->
@@ -138,18 +150,20 @@
                         </div>
 
                         <div class="card-avaliacao">
-                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> (5) 
+                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> (5)
                         </div>
 
                         <div class="card-descricao-legenda">
                             <div class="card-descricao-telefone">
-                                 <i class="fa-solid fa-phone"></i>
-                            xxxxxxxx79
+                                <i class="fa-solid fa-phone"></i>
+                                xxxxxxxx79
                             </div>
 
                             <div class="card-descricao-localidade">
-                               Pompeia
-                               <i class="fa-solid fa-location-dot"></i>
+                                Pompeia
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
                         </div>
                     </div>
@@ -179,18 +193,20 @@
                         </div>
 
                         <div class="card-avaliacao">
-                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> (5) 
+                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> (5)
                         </div>
 
                         <div class="card-descricao-legenda">
                             <div class="card-descricao-telefone">
-                                 <i class="fa-solid fa-phone"></i>
-                            xxxxxxxx79
+                                <i class="fa-solid fa-phone"></i>
+                                xxxxxxxx79
                             </div>
 
                             <div class="card-descricao-localidade">
-                               Marília
-                               <i class="fa-solid fa-location-dot"></i>
+                                Marília
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
                         </div>
                     </div>
@@ -220,24 +236,26 @@
                         </div>
 
                         <div class="card-avaliacao">
-                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> (5) 
+                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> (5)
                         </div>
 
                         <div class="card-descricao-legenda">
                             <div class="card-descricao-telefone">
-                                 <i class="fa-solid fa-phone"></i>
-                            xxxxxxxx79
+                                <i class="fa-solid fa-phone"></i>
+                                xxxxxxxx79
                             </div>
 
                             <div class="card-descricao-localidade">
-                               Marília
-                               <i class="fa-solid fa-location-dot"></i>
+                                Marília
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Fim Card Serviços -->
-                
+
                 <!-- Inicio Card Serviços -->
                 <div class="card-servicos">
                     <!-- criação da caixa pai da SEÇÂO das imagens e elementos de serviços -->
@@ -261,18 +279,20 @@
                         </div>
 
                         <div class="card-avaliacao">
-                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> (5) 
+                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> (5)
                         </div>
 
                         <div class="card-descricao-legenda">
                             <div class="card-descricao-telefone">
-                                 <i class="fa-solid fa-phone"></i>
-                            xxxxxxxx79
+                                <i class="fa-solid fa-phone"></i>
+                                xxxxxxxx79
                             </div>
 
                             <div class="card-descricao-localidade">
-                               Pompeia
-                               <i class="fa-solid fa-location-dot"></i>
+                                Pompeia
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
                         </div>
                     </div>
@@ -302,18 +322,20 @@
                         </div>
 
                         <div class="card-avaliacao">
-                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> (5) 
+                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> (5)
                         </div>
 
                         <div class="card-descricao-legenda">
                             <div class="card-descricao-telefone">
-                                 <i class="fa-solid fa-phone"></i>
-                            xxxxxxxx79
+                                <i class="fa-solid fa-phone"></i>
+                                xxxxxxxx79
                             </div>
 
                             <div class="card-descricao-localidade">
-                               Marília
-                               <i class="fa-solid fa-location-dot"></i>
+                                Marília
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
                         </div>
                     </div>
@@ -343,24 +365,26 @@
                         </div>
 
                         <div class="card-avaliacao">
-                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> (5) 
+                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i
+                                class="fa-solid fa-star"></i> (5)
                         </div>
 
                         <div class="card-descricao-legenda">
                             <div class="card-descricao-telefone">
-                                 <i class="fa-solid fa-phone"></i>
-                            xxxxxxxx79
+                                <i class="fa-solid fa-phone"></i>
+                                xxxxxxxx79
                             </div>
 
                             <div class="card-descricao-localidade">
-                               Marília
-                               <i class="fa-solid fa-location-dot"></i>
+                                Marília
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Fim Card Serviços -->
-                
+
             </div>
         </section>
     </main>
@@ -392,10 +416,12 @@
                 <h2>Contatos</h2>
                 <ul>
                     <li><i class="fa-solid fa-hotel"></i>Paraíba, 127</li>
-                    <li><a href="https://wa.me/14999999999?text=Olá tudo bem"><i class="fa-brands fa-whatsapp"></i>(14)9999-99999</a></li>
+                    <li><a href="https://wa.me/14999999999?text=Olá tudo bem"><i
+                                class="fa-brands fa-whatsapp"></i>(14)9999-99999</a></li>
                     <li><a href="tel:1434332309"><i class="fa-solid fa-phone"></i>(14)3433-2309</a></li>
                     <!-- chamando numero de telefone fixo -->
-                    <li><a href="mailto:contato@bookmenow.com.br"><i class="fa-solid fa-envelope"></i>contato@bookmenow.com.br</a></li>
+                    <li><a href="mailto:contato@bookmenow.com.br"><i
+                                class="fa-solid fa-envelope"></i>contato@bookmenow.com.br</a></li>
                     <!-- comando chama aplicativo de email do celular/pc -->
                 </ul>
             </div>

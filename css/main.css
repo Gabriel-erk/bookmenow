@@ -1,15 +1,135 @@
 /* definição de variaveis no css */
-:root{
-    --primaria:#3e4095;
+:root {
+    --primaria: #3e4095;
     --secundario: #00afee;
-    --texto: #4b4b4b;
+    --texto: #2f2f2f;
     --label-categoria: #d9c505;
     /* nomes genericos de variaveis, as cores nao estao associadas a eles, entao pode-se ter qualquer cor, que fara sentido */
     --laranja: #f58634;
     /* nome esta diretamente associado a variavel */
-   
 }
 
-body{
-    background-color: var(--primaria);
+/* removendo formatações gerais que o navegador coloca no documento */
+* {
+    /* espaçamento externo */
+    margin: 0;
+    /* espaçamento interno */
+    padding: 0;
+    box-sizing: border-box;
+    /* removendo sublinhados */
+    text-decoration: none;
+}
+
+/* alterando as fontes de todos os textos do body */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#cabecalho {
+    display: flex;
+    /* alinhamento horizontal */
+    justify-content: space-between;
+    /* alinhamento vertical */
+    align-items: center;
+    /* distancia do topo da tela ate o elemento (espaçamento interno)*/
+    padding-top: 10;
+    /* distancia do topo da tela ate o elemento (espaçamento interno)*/
+    padding-bottom: 10px;
+}
+
+.container {
+    /* max width deixando o layout responsivo, acompanhando a largura do CONTAINER, deixando a largura responsiva */
+    max-width: 1140px;
+    /* apos visualizar a largura do bloco (container: 1140px) estou centralizando definindo que a parte superior e inferior sao 0 e as laterais, como nao sei os seus valores, sao calculadas automaticamente e sao centralizadas (obs:espaçamento externo)*/
+    margin: 0 auto;
+}
+
+/* menu (caixa pai de ul) chamando ul (para atingir as caixas filho de ul - li)  */
+#menu ul {
+    display: flex;
+    list-style: none;
+}
+
+#menu ul li {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* seletor generico, estou dizendo que TODOS os <a> (tag de link) serao atingidas, caso queria ser mais objetivo, o codigo correto seria: #menu ul li a{} */
+#menu a{
+    color: var(--texto);
+    /* alterando o peso da fonte (como peguei tres pesos diferentes) */
+    font-weight: 500;
+}
+
+.btn-secundario{
+    /* comando para ver se esta retangular */
+    background-color: var(--secundario);
+    /*  (ordem) topo, esquerda, base, direita (sempre em sentido horario, do primeiro ate o ultimo */
+    padding: 5px 15px 5px 15px;
+
+    /* primeiro valor define o topo e o inferior, e o segundo a esquerda e a direita */
+    /* padding: 5px 15px; */
+
+    /* definindo a borda do "botao" como arredondada */
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#banner{
+    /* voltando para a pasta raiz, saindo da pasta css e entrando na pasta img */
+    background-image: url(../img/banner.png);
+    /* dizendo que so quero q a imagem apareça uma vez, nao quero que ela repita (caso algum usuario altere o zoom, a imagem ira se repetir para preencher o espaço), porem, ela nao ocupara todo o espaço da tela */
+    background-repeat: no-repeat;
+    /* dizendo que quero estender o tamanho da imagem , para "cobrir" toda a tela do usuario*/
+    background-size: cover;
+    height: 300px;
+    /* alterando as cores dos textos que estao sobre o banner */
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#banner p{
+    /* definindo espaçamento externo do paragrafo */
+    margin: 10px;
+}
+
+/* esta é a caixa branca de pesquisa */
+#formPesquisa{
+    background-color: #ffffff;
+    color: var(--texto);
+    /* deixando o layout flexivel a medida do tamanho selecionado pelo usuario (acessibilidade) */
+    font-size: 1.5em;
+    border-radius: 30px;
+}
+
+#formPesquisa form{
+    display: flex;
+    align-items: center;
+}
+
+#formPesquisa form input{
+    /* mudando a altura da caixa em si, o espaço de pesquisa onde esta escrito: "o que voce esta procurnado e sua localização" */
+    height: 40px;
+    /* pegando tamanho de fonte padrao do navegador */
+    font-size: 1rem;
+    /* retirando as bordas quadradas (retirando o formato de caixa) */
+    border: none;
+}
+
+#formPesquisa form i{
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+#formPesquisa form button{
+        background-color: var(--primaria);
+        border-radius: 30px;
+        color: #ffffff;
+        margin-right: 3px;
+        padding: 9px 35px;
+        border: none;
+        font-size: 1rem;
 }
