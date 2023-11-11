@@ -19,30 +19,36 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Montserrat:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet">
-        <!-- adicionando fonte, do google fonts -->
+    <!-- adicionando fonte, do google fonts -->
 
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header id="cabecalho" class="container">
-        <div id="logotipo"> 
-            <img src="img/logo.png" alt="BookMeNow" height="40"> 
+
+        <!-- criação do botao de "menu" com as 3 barras pretas, para visualização no mobile -->
+        <div id="botaoMenuMobile">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div id="logotipo">
+            <img src="img/logo.png" alt="BookMeNow" height="40">
             <!-- height define a altura -->
         </div>
 
         <!-- tag nav, serve para determinar quando havera um menu na pagina -->
         <nav id="menu">
             <ul>
-              <li><a href="javascript:;">Categorias</a></li>
-              <!-- Adicione a tag <a> e o texto "Categorias" dentro dela -->
-              <li><a href="sobre-nos.html">Sobre Nós</a></li>
-              <!-- Adicione a tag <a> e o texto "Sobre Nós" dentro dela, com o caminho correto para a página "sobre-nos.html" -->
-              <li><a href="contato.html">Contatos</a></li>
-              <!-- Adicione a tag <a> e o texto "Contatos" dentro dela, com o caminho correto para a página "contato.html" -->
+                <li><a href="javascript:;">Categorias</a></li>
+                <!-- Adicione a tag <a> e o texto "Categorias" dentro dela -->
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <!-- Adicione a tag <a> e o texto "Sobre Nós" dentro dela, com o caminho correto para a página "sobre-nos.html" -->
+                <li><a href="contato.html">Contatos</a></li>
+                <!-- Adicione a tag <a> e o texto "Contatos" dentro dela, com o caminho correto para a página "contato.html" -->
             </ul>
-          </nav>          
-        
+        </nav>
+
         <div id="botao-topo">
             <ul>
                 <!-- classe btn criada para criar uma formatação padrao de botões (formato retangular, fonte, borda arredondada etc.) -->
@@ -72,10 +78,10 @@
                         <input type="text" name="location" placeholder="Sua Localização">
                     </div>
 
-                    <button type="submit">Procurar</button>
+                    <button type="submit" id="botao-procurar">Procurar</button>
                 </form>
             </div>
-            <div class="lista-serviços-banner">
+            <div class="lista-servicos-banner">
                 <ul>
                     <li>Manutenção de Computador</li>
                     <li>Mecânico</li>
@@ -392,7 +398,8 @@
     <!-- Bloco como funciona - Atividade Futura -->
 
     <footer id="rodape">
-        <div class="container">
+        <!-- criando mais um id, para formatação assertiva no css, pois modificar a caixa "container", atrapalharia o codigo por completo -->
+        <div class="container" id="linha-rodape">
             <div class="coluna-rodape">
                 <h2>Categorias</h2>
                 <ul>
@@ -434,10 +441,12 @@
                     <a href="https://instagram.com">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <div class="link-app">
-                        <img src="img/google-play.png" alt="Baix nosso app Google Play">
-                        <img src="img/app-store.png" alt="Baixe nosso app Apple Store">
-                    </div>
+                    
+                </div>
+
+                <div class="link-app">
+                    <img src="img/google-play.png" alt="Baix nosso app Google Play">
+                    <img src="img/app-store.png" alt="Baixe nosso app Apple Store">
                 </div>
             </div>
         </div>

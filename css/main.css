@@ -35,13 +35,19 @@ body {
     padding-top: 10;
     /* distancia do topo da tela ate o elemento (espaçamento interno)*/
     padding-bottom: 10px;
+    height: 65px;
 }
+
+
 
 .container {
     /* max width deixando o layout responsivo, acompanhando a largura do CONTAINER, deixando a largura responsiva */
     max-width: 1140px;
     /* apos visualizar a largura do bloco (container: 1140px) estou centralizando definindo que a parte superior e inferior sao 0 e as laterais, como nao sei os seus valores, sao calculadas automaticamente e sao centralizadas (obs:espaçamento externo)*/
     margin: 0 auto;
+    /* adicionando espaçamento interno (porem, principalmente para melhorar os elementos do container no mobile) */
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* menu (caixa pai de ul) chamando ul (para atingir as caixas filho de ul - li)  */
@@ -60,6 +66,12 @@ body {
     color: var(--texto);
     /* alterando o peso da fonte (como peguei tres pesos diferentes) */
     font-weight: 500;
+}
+
+/* desaparecer elementos na tela quando a tela tiver mais que 767px (quando for desktop, configurado na estrutura condicional no fim do codigo) */
+#botaoMenuMobile{
+    /* desaparecer elementos da tela */
+    display: none;
 }
 
 .btn-secundario{
@@ -126,10 +138,335 @@ body {
 
 #formPesquisa form button{
         background-color: var(--primaria);
+        font-size: 1rem;
         border-radius: 30px;
         color: #ffffff;
         margin-right: 3px;
         padding: 9px 35px;
         border: none;
-        font-size: 1rem;
 }
+
+.lista-servicos-banner ul li{
+    /* estou dizendo que os itens da lista estejam inline, mas continuem block - as bolinhas laterais somem automaticamente */
+    display: inline-block;
+    /* distancia entre eles */
+    margin: 10px;
+    /* 1 em = 16 pixels, forma relativa */
+    font-size: 0.8em;
+    /* dizendo qu quero uma borda de 1 pixel, pontilhada e branca */
+    border: 1px dotted #ffffff;
+    /* primeiro valor topo e base, segundo valor, laterais */
+    padding: 5px 20px;
+    border-radius: 50px;
+}
+
+.secao-titulo{
+    border-left: 5px solid var(--primaria);
+    /* colocando 30px no superior/base de um elemento externo para outro */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* colocando 10px de espaçamento interno do elemento para outro */
+    padding-left: 10px;
+}
+
+.titulo{
+    display: flex;
+    /* respeita as extremidades da borda - jogando elemento "ver mais" no canto esquerdo da caixa */
+    justify-content: space-between;
+}
+
+.titulo a{
+    color: var(--texto);
+    /* deixando o texto em maiusculo com css, sem precisar digitar */
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Lista de categorias */
+
+.lista-card-categorias{
+    display: flex; 
+    /* largura de espaçamenteo entre os elementos */
+    gap: 40px;
+}
+
+/* deixando as imagens desta caixa responsivas - sempre que trabalhar com layout flexivel, é importante deixar as imagens flexiveis, se nao, como no caso acima, elas seriam simplesmente foradas para fora da caixa, ficando descentralizadas, e nao tendo seu tamanho alterado conforme o dispositivo do usuario*/
+.lista-card-categorias img{
+    /* deixando largura flexivel */
+    width: 100%;
+    /* como nao sei a altura, calcule para mim */
+    height: auto;
+    border-radius: 15px;
+}
+
+.lista-card-categorias div{
+    /* definindo que esta emp posiçao relativa ao que foi programado */
+    position: relative;
+}
+
+/* manipulando elementos filho da  */
+.lista-card-categorias div span{
+    /* continue sendo inline, mas vire block, para poder manipular largura, etc (mesmo no span nao tendo diferença nenhuma, podendo deixar aqui, so block) */
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    /* distancia do topo da imagem (caixa pai) ate o texto */
+    top: 10px;
+    color:#ffffff;
+    padding: 0px 20px;
+    font-size: 12px;
+    border-radius: 15px;
+    background-color: var(--laranja);
+}
+
+.lista-card-servicos{
+    display: flex;
+    /* colocando em colunas */
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.lista-card-servicos img{
+    /* basicamente copia e cola da "lista-card-categorias", seguindo a formatação do site,  */
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    /* escurecendo a imagem, como se fosse uma "pelicula", para caso o usuario cadastre uma imagem totalemente branca (da mesma cor do elemento de preço, que caso ocorrese, ficaria ocultado) */
+    filter: brightness(70%);
+    /* aumentando compatibilidade do comando acima com o navegador, por isso os mesmos valores sao aplicados aqui (alguns nao permitem) */
+    -webkit-filter: brightness(70%);
+}
+
+.card-servicos{
+    /* determina o quanto um item flexível crescerá em relação aos outros itens quando há espaço extra disponível no contêiner, recebe um valor numérico que representa a proporção em que o item deve crescer em relação aos outros itens. Quanto maior for o valor, mais espaço adicional o item ganhará quando houver espaço sobrando no contêiner */
+    flex-grow: 1;
+    /* realiza o calculo, baseado no valor total  da caixa (100%) dividido pelo numero de colunas, e retira os 30px que adicionei com gap (em lista-card-servicos img) */
+    width: calc((100% / 3) - 30px);
+}
+
+/* deixando a caixa pai relativa, para ela nao trocar de posição e ser possivel sobrepor os elementos acima da imagem */
+.card-foto{
+    position: relative;
+}
+
+.card-foto-legenda{
+    position: absolute;
+    /* definindo para ficar na parte de baixo da foto*/
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content:space-between;
+    /* a caixa nao tinha espaço para executar os comandos de espaçamento do flex, nao tinha espaço para mover seus elementos, por isso pedi para aumentar a  largura da sua caixa*/
+    width: 100%;
+    padding: 20px;
+    /* centralizando texto */
+    align-items: center;
+}
+
+/* formatando o preço que esta nas fotos */
+.card-foto-preco{
+    font-size:20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* formatando o botao da categoria  do item, ao lado do preço */
+.card-foto-categoria{
+    background-color: var(--label-categoria);
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+/* formatando a parte com os icones do telefone e a cidade */
+.card-descricao-legenda{
+    display: flex;
+    justify-content: space-between;
+}
+
+#rodape{
+    /* definindo distancia do rodape inteiro dos elementos acima (card-servicos eu acho) */
+    margin-top: 50px;
+    border-top: 2px solid #ccc;
+    /* afastando conteudo do rodape do topo da caixa rodape */
+    padding-top: 30px;
+}
+
+#linha-rodape{
+    display: flex;
+    /* permitindo que rodape fique um abaixo do outro no mobile*/
+    flex-wrap: wrap;
+}
+
+.coluna-rodape{
+    /* definindo que cada coluna de elementos ocupe 25% do espaço da caixa pai, ja que sao 4, cada um ocuparia 25% para ficarem posicionados de forma correta */
+    width: 25%;
+}
+
+.coluna-rodape a{
+    color: var(--texto);
+    margin-top: 5px;
+    display: block;
+}
+
+/* quando o usuario passar o mouse em cima do A, ou seja link quero que font weight seja 500 (texto aumentara um pouco) e a cor seja roxa */
+.coluna-rodape a:hover{
+    color: var(--primaria);
+    /* o icone aument um pouco por causa desse comando */
+    font-weight: 500;
+}
+
+.coluna-rodape ul{
+    list-style: none;
+}
+
+.coluna-rodape i{
+    color: var(--primaria);
+}
+
+.rede-social{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rede-social a{
+    background-color: #ededed;
+    font-size: 24px;
+    /* tamanho da caixa */
+    width: 50px;
+    /* distancia entre elementos igual tambem */
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.copyright{
+    background-color: #ccc;
+    text-align:center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top:30px;
+}
+/* Formatação Mobile */
+
+/* estrututra condicional, se a largura da minha tela, for no maximo, 767, */
+@media(max-width: 767px) {
+
+    #cabecalho{
+        /* deixando sua posição fiaca no site, fazeno com que voce role para explorar mais a pagina e ele vai junto, porem, seus elementos sao drasticamente alterados */
+        position: fixed;
+        /* corrigindo erros que ficaram, de a cor de fundo sumir, e a imagem do banner logo abaixo invadirem o cabecalho */
+        background-color: #ffffff;
+        width: 100%;
+        /* ao rolar a pagina, o cabecalho, fica sendo sobreposto pelos outros elementos e img do site, por isso, esse comando para deixa-lo acima delas */
+        z-index: 999999 ;
+    }
+
+    #logotipo img{
+        /* como foi colocado height para essa imagem no html, utilizaremos a mesma para redimensionar no mobile(widht causa confilto) */
+        height: 30px;
+    }
+
+    #banner{
+        padding-top: 60px;
+        /* altura minima, caso seja necessario aumentar, ele aumentara */
+        min-height: 330px;
+    }
+
+    #botaoMenuMobile {
+        /* mostrar elemento na tela */
+        display: block;
+        padding: 10px;
+        /* dizendo para aparecer uma "maozinha" ao passar o mouse em cima*/
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    #menu{
+        /* mantendo sua posição fixa no site, fazendo com que voce role para explorar mais a pagina e ele vai junto*/
+        position: fixed;
+        background-color: #ffffff;
+        /* normalmente varia de 200-300px menu de mobile */
+        width: 250px;
+        /* pegando 100% da altura da minha tela - vh = viewport */
+        height: 100vh;
+        /* texto ficou escondido, entao, estou definindo distancia dele do topo ate sua posição atual */
+        top: 65px;
+        /*dizendo para ficar colado na margem esquerda */
+        left: -255px;
+
+        /* dizendo para menu ficar acima de todas as camadas do site */
+        z-index: 99999;
+        /* eixo x, y, desfoque e a cor  - colocando sombreamento ao lado desta caixa*/
+        box-shadow: 2px 5px 5px #2f2f2f;
+        /* adicionando animação ao clicar na opção de menu no mobile */
+        transition: left 0.7s;
+    }
+    
+    /* classe de apoio para javascript que a ativara, fazendo o menu ficar exposto ao clicar no botao do menu - a chamada #menu.menu-ativo, foi feito de maneira dessa maneira para que priorize o comando left colocado aqui(left 0), e nao na caixa pai #menu, colocado anteriormente (left -255px)*/
+    #menu.menu-ativo{
+        left: 0;
+    }
+
+    /* deixando itens da lista um abaixo do outro */
+    #menu ul{
+        display: block;
+    }
+
+    #menu li{
+        padding: 10px;
+    }
+
+    #formPesquisa{
+        margin-left: 15px;
+        margin-right: 15px;
+        border-radius: 10px;
+    }
+    
+    #formPesquisa form{
+        flex-direction: column;
+    }
+
+    .form-icon{
+        /* colocando 100% para a caixa "formPesquisa input, ter espaço para se expandir*/
+        width: 100%;
+        display: flex;
+    }
+    
+    #formPesquisa input{
+        flex-grow: 1;
+    }
+
+    .lista-servicos-banner{
+        display: none;
+    }
+
+    #banner h2{
+        font-size: 20px;
+    }
+
+    #banner p{
+        font-size: 14px;
+    }
+
+    #botao-procurar{
+        margin-bottom: 5px;
+    }
+    
+    .card-servicos{
+        flex-grow: 1;
+        width: calc((100% / 2) - 30px);
+    }
+
+    .coluna-rodape{
+        width: 50%;
+        font-size: 14px;
+    }
+}
+
+
