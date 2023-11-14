@@ -201,12 +201,12 @@ body {
 }
 
 .lista-card-categorias div{
-    /* definindo que esta emp posiçao relativa ao que foi programado */
+    /* definindo que esta em posiçao relativa ao que foi programado */
     position: relative;
 }
 
 /* manipulando elementos filho da  */
-.lista-card-categorias div span{
+.lista-card-categorias div .items span {
     /* continue sendo inline, mas vire block, para poder manipular largura, etc (mesmo no span nao tendo diferença nenhuma, podendo deixar aqui, so block) */
     display: inline-block;
     position: absolute;

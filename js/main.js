@@ -7,3 +7,28 @@ botaoMenu.addEventListener('click', function(){
     // adicionando função que remove e adiciiona a classe que eu escolher
     menu.classList.toggle('menu-ativo');  
 });
+
+// Script do Slide (em jQuerry)
+
+$('.owl-carousel').owlCarousel({
+    // definindo que é um loop
+    loop:true,
+    margin:10,
+    // definindo para setas de navegação  naoaparecerem (neste caso, apenas bolinhas)
+    nav:false,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    // animação
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
