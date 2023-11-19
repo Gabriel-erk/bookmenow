@@ -16,8 +16,11 @@ $('.owl-carousel').owlCarousel({
     margin:10,
     // definindo para setas de navegação  naoaparecerem (neste caso, apenas bolinhas)
     nav:false,
+    // dizendo que ira dar play automaticamente
     autoplay:true,
-    autoplayTimeout:1000,
+    // dizendo o tempo que ira passar cada slide
+    autoplayTimeout:5000,
+    // dizendo para nao parar quando passar o mouse em cima
     autoplayHoverPause:true,
     // animação
     responsive:{

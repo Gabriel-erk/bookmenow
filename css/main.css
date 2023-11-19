@@ -205,7 +205,7 @@ body {
     position: relative;
 }
 
-/* manipulando elementos filho da  */
+/* manipulando elementos filho da lista-card-categorias - div - chamando classe .items  e seu elemento filho span, e aplicando essas condições somente a ele  */
 .lista-card-categorias div .items span {
     /* continue sendo inline, mas vire block, para poder manipular largura, etc (mesmo no span nao tendo diferença nenhuma, podendo deixar aqui, so block) */
     display: inline-block;
